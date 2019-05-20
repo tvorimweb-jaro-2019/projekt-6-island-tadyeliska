@@ -196,8 +196,8 @@ h2::after {
     .galerie .foto {
         max-width: 50%;
         height: auto;
-        line-height: 0;
         overflow: hidden;
+        position: relative;
     }   
     
     .foto img {
@@ -212,10 +212,14 @@ h2::after {
         padding: 2px 0;
         transition: 0.5s;
         font-weight: bold;
+        bottom: 0;
+        right: unset;
+        width: 100%;
+        transform: translate(0, 100%);
     }
 
     .foto:hover .popisek { 
-        transform: translate(0, -100%);
+        transform: translate(0, 0);
         transition: 0.5s;
     }
     
