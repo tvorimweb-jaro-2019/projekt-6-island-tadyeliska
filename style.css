@@ -17,27 +17,258 @@ body {
     line-height: 1.6;
 }
 
+h2, .popisek {
+    font-family: 'Raleway', serif;
+}
 
 /* HLAVICKA */
 
 .titulek {
     font-family: 'Raleway', serif;
+    font-size: 50px;
+    margin: 0;
+    padding-bottom: 0;
 }
 
+.titulek, .perex {
+    color: white;
+    text-align: center;
+}
+
+.perex {
+    padding: 0 20px 20px;
+    font-size: 16px;
+}
+
+.autor {
+    color: #afafaf;
+    text-align: center;
+    font-style: italic;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+.autor::before {
+    position: absolute;
+    content: " ";
+    width: 70px;
+    height: 2px;
+    background-color: #afafaf;
+    left: calc( (100% - 70px) / 2);
+    top: -15px;
+}
+
+.hlavicka {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(images/island-hlavicka.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: auto;
+    min-width: auto; 
+}   
 
 /* MENU */
 
+.menu ul {
+    padding: 30px;
+}
 
+.menu li {
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid #afafaf85;
+}
 
+.menu a {
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: 'Raleway', serif;
+    font-weight: 500;
+    color: #afafaf85;
+    display: block;
+}
 
 /* OBSAH */
 
+h2 {
+    position: relative;
+    padding: 0 20px 20px;
+}
 
+h2::after {
+    content: " ";
+    width: 100px; 
+    height: 4px;
+    background-color: #6f8cdd;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
 
+.obsah p {
+    padding: 0 20px;
+}
+
+.obsah-foto {
+    padding: 30px 0;
+}
+
+.obsah img {
+    max-width: 100%;
+}
+
+.popisek, .popisek a {
+    font-size: 10px;
+    color: #afafaf;
+    text-align: center;
+    margin: 0;
+}
 
 /* FOTOGALERIE */
 
+.galerie img {
+    max-width: 100%;
+}
 
+.galerie .popisek {
+    font-weight: bold;
+    padding-bottom: 10px;
+}
 
+.popisek-copy {
+    font-weight: normal;
+}
 
 /* PATICKA */
+
+.paticka {
+    padding-top: 15px;
+    color: #afafaf;
+    font-size: 10px;
+    background-color: #afafaf2d;
+    box-shadow: 0 10px 20px 0 grey inset;
+}
+
+.paticka a {
+    color: #afafaf;
+}
+
+@media (min-width:500px) {
+
+    .menu {
+        display: flex;
+        justify-content: space-around;
+        padding: 30px;
+    }
+
+    .menu li {
+        border-top: 0.5px solid #afafaf;
+        border-right: 0.5px solid #afafaf;
+        padding: 3px;
+    }
+
+    .menu li:last-child {
+        border-right: 0;
+    }
+
+    .obsah-foto {
+        position: relative;
+    }
+
+     .popisek {
+        position: absolute;
+        right: -5px;
+        bottom: 50px;
+        color: white;
+    }
+
+    .obsah a {
+        color: white;
+    }
+
+    .galerie {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .galerie .foto {
+        max-width: 50%;
+        line-height: 0;
+    }    
+}
+
+@media (min-width: 1000px) {
+
+    .body {
+        background-color: #afafaf;
+    }
+    .titulek {
+        font-size: 80px;
+        padding: 30px 0 10px;
+    }
+
+    .perex {
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .autor {
+        padding-bottom: 130px;
+    }
+
+    .hlavicka {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .pruh {
+        width: 960px;
+        background-color: white;
+        margin: -100px auto;
+    }
+
+
+    .menu {
+        display: block;
+        width: 25%;
+        float: left;
+        padding: 40px 40px 0 40px;
+        margin: 0;
+    }
+
+    .menu li {
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid rgb(240, 240, 240);
+        padding: 0;
+    }
+
+    .menu a {
+        font-size: 12px;
+        text-align: left;
+        padding: 5px 0;
+    }
+
+    .obsah-odstavec1, .obsah-odstavec3, .obsah-odstavec4 p {
+        padding: 40px 20px 0px 250px;
+    }
+
+    .obsah-odstavec2 p {
+        padding: 0 250px 0 40px;
+    }
+
+    .obsah-odstavec2 h2 {
+        padding: 0 40px 20px;
+    }
+
+    .galerie .foto {
+        width: calc(100% / 3);
+    }
+
+    .paticka {
+        box-shadow: 0px 0px #f5f5f5;
+        padding: 130px 0px 40px;
+}
