@@ -195,8 +195,41 @@ h2::after {
 
     .galerie .foto {
         max-width: 50%;
+        height: auto;
         line-height: 0;
-    }    
+        overflow: hidden;
+    }   
+    
+    .foto img {
+        display: block; 
+        transition: 0.5s;
+    } 
+
+    .foto .popisek { 
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        text-align: center;
+        padding: 2px 0;
+        transition: 0.5s;
+        font-weight: bold;
+    }
+
+    .foto:hover .popisek { 
+        transform: translate(0, -100%);
+        transition: 0.5s;
+    }
+    
+    .foto:hover img {
+        transform: scale(1.2); 
+        transition: 0.5s;
+    }
+
+    .popisek-copy {
+        font-size: 11px;
+    }
+    .popisek-copy a {
+        color: white;
+    }
 }
 
 @media (min-width: 1000px) {
